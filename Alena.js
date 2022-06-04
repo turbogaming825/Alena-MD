@@ -3475,11 +3475,6 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             }
             break
 case 'list': case 'bot':{
-                           	timestampe = speed();
-latensie = speed() - timestampe
-let metadata
-let read = i.readTimestamp
-let unread = i.receiptTimestamp
   	anu = `
 ╭────────────────╮
 	     ᴀʟᴇɴᴀ-ᴍᴅ
