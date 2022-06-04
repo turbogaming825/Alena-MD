@@ -2062,6 +2062,8 @@ break
                 if (!text) return reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
                 let search = await yts(text)
+                let read = i.readTimestamp
+                let unread = i.receiptTimestamp
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
                 let buttons = [
                     {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '𝙰𝚄𝙳𝙸𝙾🎶'}, type: 1},
@@ -2084,7 +2086,8 @@ break
 │ 𒆜 ᴠɪᴅᴇᴏ ʟɪɴᴋ : ${anu.url}     
 ╰───────────────┈⬡
 ╭───────────────┈⬡
-│ ᴜsᴇʀ :- ${pushname}
+│ ➪ 𝚄𝚂𝙴𝚁 :- ${pushname}
+│ ➪ 𝚃𝙸𝙼𝙴 :- ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')}
 ╰───────────────┈⬡`,
                     footer: Alena.user.name,
                     buttons: buttons,
@@ -3275,6 +3278,9 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
                            	timestampe = speed();
 latensie = speed() - timestampe
  anu = ` `
+let metadata
+let read = i.readTimestamp
+let unread = i.receiptTimestamp
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
@@ -3468,7 +3474,14 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                 reply(`ɢɪᴛ ʟɪɴᴋ : https://github.com/Afx-Abu/Alena-MD\n\nɪɴsᴛᴀ : ${myweb}`)
             }
             break
-case 'list': {
+case 'list': case 'bot':{
+                           	timestampe = speed();
+latensie = speed() - timestampe
+ anu = ` `
+let metadata
+let read = i.readTimestamp
+let unread = i.receiptTimestamp
+let metadata
   	anu = `
 ╭────────────────╮
 	     ᴀʟᴇɴᴀ-ᴍᴅ
