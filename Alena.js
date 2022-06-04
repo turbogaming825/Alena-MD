@@ -3290,6 +3290,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 ╰─⬡───⬡────────⬡───⬡──⬡
                                       │
 ╭─⬡───⬡ 𝐁𝐎𝐓 𝐈𝐍𝐅𝐎 ⬡───⬡──⬡
+│𒆜 𝙱𝙾𝚃 𝚁𝚄𝙽𝙽𝙸𝙽𝙶 : ${runtime(process.uptime())}
 │𒆜 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁 : ${Object.keys(global.db.data.users).length}
 │𒆜 𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 : ${os.platform()}
 │𒆜 𝚂𝙿𝙴𝙴𝙳 : ${latensie.toFixed(4)} miliseconds
@@ -3297,7 +3298,12 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 ╰─⬡───⬡────────⬡───⬡──⬡
                                       │
 ╭─⬡───⬡ 𝐆𝐑𝐎𝐔𝐏 𝐈𝐍𝐅𝐎 ⬡─⬡──⬡
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙾𝙽𝙻𝙸𝙽𝙴 𝙼𝙴𝙼𝙱𝙴𝚁𝚂 :- ' + online.map(v => '𒆜 @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙽𝙰𝙼𝙴:- ${groupName}
+│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙸𝙳:- ${m.chat}
+│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙲𝚁𝙰𝚃𝙴𝙳 :- ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}
+│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙾𝚆𝙽𝙴𝚁:- @${groupMetadata.owner.split('@')[0]}
+│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙾𝚆𝙽𝙴𝚁 𝙿𝙷:- ${groupAdmins.length}
+│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽:- ${groupMetadata.desc}
 ╰─⬡───⬡ ${pushname}  ⬡─⬡──⬡`,
                             hydratedButtons: [{
                                 urlButton: {
@@ -3330,6 +3336,16 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 }),{ userJid: m.chat })
                 Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
+break
+case 'grupinfo': case 'groupinfo':
+try{
+ var pic = await Turbo.getProfilePicture(m.chat)
+  } catch {
+ var pic = 'https://telegra.ph/file/08691a735d7317735af6a.jpg'
+  }
+let ingfo = `*G R O U P  I N F O*\n\n*Name :* ${groupName}\n*ID Group :* ${m.chat}\n*Made :* ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n*Group Owner:* @${groupMetadata.owner.split('@')[0]}\n*Number Of Admins :* ${groupAdmins.length}\n*Number Of Participants :* ${participants.length}\n*Desc :* \n${groupMetadata.desc}`
+ds = await getBuffer(pic)
+Turbo.sendMessage(m.chat, { image: ds,caption: ingfo, mentions: [groupMetadata.owner] }, { quoted: m})
 break
                 case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -3474,7 +3490,7 @@ case 'list': {
 │ ᴜsᴇʀ : ${pushName}
 │ ʙᴏᴛ ɴᴀᴍᴇ : ${global.botname}   
 │ ᴏᴡɴᴇʀ ɴᴀᴍᴇ: ${global.ownername}
-│ ʙᴏᴛ ʀᴜɴɴɪɴɢ : ${latensie.toFixed(4)} miliseconds
+│ ʙᴏᴛ ʀᴜɴɴɪɴɢ : ${runtime(process.uptime())}
 │ ᴠᴇʀsɪᴏɴ : 3.0.0
 │ ᴄʀᴇᴀᴛᴇʀ : ${global.ownername}
 ╰────────────────
