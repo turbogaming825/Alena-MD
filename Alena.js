@@ -3481,7 +3481,6 @@ latensie = speed() - timestampe
 let metadata
 let read = i.readTimestamp
 let unread = i.receiptTimestamp
-let metadata
   	anu = `
 ╭────────────────╮
 	     ᴀʟᴇɴᴀ-ᴍᴅ
