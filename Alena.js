@@ -3274,7 +3274,6 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
                      case 'alive': case 'menu': case 'list': case 'bot':{
                            	timestampe = speed();
 latensie = speed() - timestampe
-let metadata = await Alena.groupMetadata(i)
  anu = ` `
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
@@ -3298,10 +3297,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 ╰─⬡───⬡────────⬡───⬡──⬡
                                       │
 ╭─⬡───⬡ 𝐆𝐑𝐎𝐔𝐏 𝐈𝐍𝐅𝐎 ⬡─⬡──⬡
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙽𝙰𝙼𝙴 : ${metadata.subject}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙸𝙳 : ${metadata.id}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙲𝚁𝙴𝙰𝚃𝙴𝙳 : ${moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙼𝙴𝙼𝙱𝙴𝚁𝚂 : ${metadata.participants.length}
+│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙾𝙽𝙻𝙸𝙽𝙴 𝙼𝙴𝙼𝙱𝙴𝚁𝚂 :- ' + online.map(v => '𒆜 @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
 ╰─⬡───⬡ ${pushname}  ⬡─⬡──⬡`,
                             hydratedButtons: [{
                                 urlButton: {
