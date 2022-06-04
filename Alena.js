@@ -3484,7 +3484,6 @@ case 'list': case 'bot':{
 │ ᴜsᴇʀ : ${pushName}
 │ ʙᴏᴛ ɴᴀᴍᴇ : ${global.botname}   
 │ ᴏᴡɴᴇʀ ɴᴀᴍᴇ: ${global.ownername}
-│ ʙᴏᴛ ʀᴜɴɴɪɴɢ : ${latensie.toFixed(4)} miliseconds
 │ ᴠᴇʀsɪᴏɴ : 3.0.0
 │ ᴄʀᴇᴀᴛᴇʀ : ${global.ownername}
 ╰────────────────
