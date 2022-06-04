@@ -2099,7 +2099,7 @@ break
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Alena.sendImage(m.chat, media.thumb, `𒆜 ᴛɪᴛʟᴇ : ${media.title}\n𒆜 ᴍᴘ3 sɪᴢᴇ : ${media.filesizeF}\n𒆜 ʟɪɴᴋ : ${isUrl(text)}\n𒆜 ᴇxᴛ : MP3\n𒆜 ʀᴇsᴏʟᴏᴛɪᴏɴ : ${args[1] || '320kbps'}`, m)
+                Alena.sendImage(m.chat, media.thumbnail, `𒆜 ᴛɪᴛʟᴇ : ${media.title}\n𒆜 ᴍᴘ3 sɪᴢᴇ : ${media.filesizeF}\n𒆜 ʟɪɴᴋ : ${isUrl(text)}\n𒆜 ᴇxᴛ : MP3\n𒆜 ʀᴇsᴏʟᴏᴛɪᴏɴ : ${args[1] || '320kbps'}`, m)
                 Alena.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -2118,7 +2118,7 @@ break
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(urls[text - 1], quality)
                 if (media.filesize >= 100000) return reply('File Over Limit '+util.format(media))
-                Alena.sendImage(m.chat, media.thumb, `𒆜 Title : ${media.title}\n𒆜 File Size : ${media.filesizeF}\n𒆜 Url : ${urls[text - 1]}\n𒆜 Ext : MP3\n𒆜 Resolution : ${args[1] || '128kbps'}`, m)
+                Alena.sendImage(m.chat, media.thumbnail, `𒆜 Title : ${media.title}\n𒆜 File Size : ${media.filesizeF}\n𒆜 Url : ${urls[text - 1]}\n𒆜 Ext : MP3\n𒆜 Resolution : ${args[1] || '128kbps'}`, m)
                 Alena.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -3280,7 +3280,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: thumb,
+                            jpegThumbnail: fs.readFileSync('alena.jpg')},
                             hydratedFooterText: `
 ╭────⬡ 𝐀𝐋𝐈𝐕𝐄 𝐔𝐒𝐄𝐑 :- ${pushname} ────⬡
 │   
@@ -3331,9 +3331,9 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                             }]
                         }
                     }
-                }), { userJid: m.chat })
+                }),{ userJid: m.chat })
                 Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
-                }
+            }
 break
                 case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -3625,7 +3625,7 @@ case 'list': {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: thumb,
+                            jpegThumbnail: fs.readFileSync('alena.jpg')},
                             hydratedFooterText: `${pushname}`,
                             hydratedButtons: [{
                                 urlButton: {
@@ -3640,7 +3640,7 @@ case 'list': {
                             }]
                         }
                     }
-                }), { userJid: m.chat })
+                }),{ userJid: m.chat })
                 Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
 break            
@@ -3872,14 +3872,14 @@ case 'allmenu': {
 ┃╠${prefix}masasubur (indo)
 ┃╠${prefix}zodiak (indo)
 ┃╠${prefix}shio (indo)
-┃╚═══════✍︎𝑁𝑒𝑥𝑢𝑠𝑁𝑤
+┃╚═══════𝐴𝑙𝑒𝑛𝑎-𝑀𝐷
 ┗━「 *Created By ${ownername}*  𖠌」━⭓`
     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: thumb,
+                            jpegThumbnail: fs.readFileSync('alena.jpg')},
                             hydratedFooterText: `${pushname}`,
                             hydratedButtons: [{
                                 urlButton: {
@@ -3894,7 +3894,7 @@ case 'allmenu': {
                             }]
                         }
                     }
-                }), { userJid: m.chat })
+                }),{ userJid: m.chat })
                 Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
 break
