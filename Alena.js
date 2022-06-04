@@ -2062,8 +2062,6 @@ break
                 if (!text) return reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
                 let search = await yts(text)
-                let read = i.readTimestamp
-                let unread = i.receiptTimestamp
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
                 let buttons = [
                     {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '𝙰𝚄𝙳𝙸𝙾🎶'}, type: 1},
@@ -2086,8 +2084,7 @@ break
 │ 𒆜 ᴠɪᴅᴇᴏ ʟɪɴᴋ : ${anu.url}     
 ╰───────────────┈⬡
 ╭───────────────┈⬡
-│ ➪ 𝚄𝚂𝙴𝚁 :- ${pushname}
-│ ➪ 𝚃𝙸𝙼𝙴 :- ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')}
+│ ᴜsᴇʀ :- ${pushname}
 ╰───────────────┈⬡`,
                     footer: Alena.user.name,
                     buttons: buttons,
@@ -3274,12 +3271,11 @@ Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
-                     case 'alive': case 'nano': case 'bot':{
+                     case 'alive': case 'menu': case 'list': case 'bot':{
                            	timestampe = speed();
 latensie = speed() - timestampe
+let metadata = await Alena.groupMetadata(i)
  anu = ` `
-let read = i.readTimestamp
-let unread = i.receiptTimestamp
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
@@ -3299,7 +3295,14 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 │𒆜 𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 : ${os.platform()}
 │𒆜 𝚂𝙿𝙴𝙴𝙳 : ${latensie.toFixed(4)} miliseconds
 │𒆜 𝙷𝙾𝚂𝚃𝙽𝙰𝙼𝙴 : ${os.hostname()}
-╰─⬡───⬡────────⬡───⬡──⬡`,
+╰─⬡───⬡────────⬡───⬡──⬡
+                                      │
+╭─⬡───⬡ 𝐆𝐑𝐎𝐔𝐏 𝐈𝐍𝐅𝐎 ⬡─⬡──⬡
+│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙽𝙰𝙼𝙴 : ${metadata.subject}
+│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙸𝙳 : ${metadata.id}
+│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙲𝚁𝙴𝙰𝚃𝙴𝙳 : ${moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}
+│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙼𝙴𝙼𝙱𝙴𝚁𝚂 : ${metadata.participants.length}
+╰─⬡───⬡ ${pushname}  ⬡─⬡──⬡`,
                             hydratedButtons: [{
                                 urlButton: {
                                     displayText: '𝙸𝙽𝚂𝚃𝙰 🔖',
@@ -3465,7 +3468,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                 reply(`ɢɪᴛ ʟɪɴᴋ : https://github.com/Afx-Abu/Alena-MD\n\nɪɴsᴛᴀ : ${myweb}`)
             }
             break
-case 'list': case 'bot':{
+case 'list': {
   	anu = `
 ╭────────────────╮
 	     ᴀʟᴇɴᴀ-ᴍᴅ
@@ -3640,7 +3643,7 @@ case 'list': case 'bot':{
                 }),{ userJid: m.chat })
                 Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
-break 
+break            
 case 'allmenu': {
   	anu = `
 ┏━「 *${botname}* 」━━⭓ 
