@@ -3278,7 +3278,6 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
                            	timestampe = speed();
 latensie = speed() - timestampe
  anu = ` `
-let metadata
 let read = i.readTimestamp
 let unread = i.receiptTimestamp
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -3300,15 +3299,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 │𒆜 𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 : ${os.platform()}
 │𒆜 𝚂𝙿𝙴𝙴𝙳 : ${latensie.toFixed(4)} miliseconds
 │𒆜 𝙷𝙾𝚂𝚃𝙽𝙰𝙼𝙴 : ${os.hostname()}
-╰─⬡───⬡────────⬡───⬡──⬡
-                                      │
-╭─⬡───⬡ 𝐆𝐑𝐎𝐔𝐏 𝐈𝐍𝐅𝐎 ⬡─⬡──⬡
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙽𝙰𝙼𝙴 : ${metadata.subject}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙾𝚆𝙽𝙴𝚁 : @${metadata.owner.split('@')[0]}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙸𝙳 : ${metadata.id}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙲𝚁𝙴𝙰𝚃𝙴𝙳 : ${moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙼𝙴𝙼𝙱𝙴𝚁𝚂 : ${metadata.participants.length}
-╰─⬡───⬡ ${pushname}  ⬡─⬡──⬡`,
+╰─⬡───⬡────────⬡───⬡──⬡`,
                             hydratedButtons: [{
                                 urlButton: {
                                     displayText: '𝙸𝙽𝚂𝚃𝙰 🔖',
