@@ -3274,7 +3274,7 @@ Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
-                     case 'alive': case 'menu': case 'list': case 'bot':{
+                     case 'alive': case 'nano': case 'bot':{
                            	timestampe = speed();
 latensie = speed() - timestampe
  anu = ` `
@@ -3484,6 +3484,7 @@ case 'list': case 'bot':{
 │ ᴜsᴇʀ : ${pushName}
 │ ʙᴏᴛ ɴᴀᴍᴇ : ${global.botname}   
 │ ᴏᴡɴᴇʀ ɴᴀᴍᴇ: ${global.ownername}
+│ ʙᴏᴛ ʀᴜɴɴɪɴɢ : ${latensie.toFixed(4)} miliseconds
 │ ᴠᴇʀsɪᴏɴ : 3.0.0
 │ ᴄʀᴇᴀᴛᴇʀ : ${global.ownername}
 ╰────────────────
