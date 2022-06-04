@@ -3643,7 +3643,7 @@ case 'list': {
                 }),{ userJid: m.chat })
                 Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
-break            
+break 
 case 'allmenu': {
   	anu = `
 ┏━「 *${botname}* 」━━⭓ 
