@@ -3237,7 +3237,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 Alena.sendContact(m.chat, global.owner, m)
             }
             break
-case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
+            case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/${command}`)
 					.then(({data}) => {
@@ -3251,7 +3251,7 @@ case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite'
 					Alena.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
-case "setmenuxxx": 
+                case "setmenuxxx": 
 if (!text) return reply("1. image\n2. list\n3. catalog\n\nExample .setmenu image")
 if (q == "image") {
 typemenu = 'image'
@@ -3271,7 +3271,7 @@ Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
-                     case 'alive': case 'menu': case 'list': case 'bot':{
+                    case 'alive': case 'menu': case 'list': case 'bot':{
                            	timestampe = speed();
 latensie = speed() - timestampe
  anu = ` `
@@ -3337,17 +3337,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
 break
-case 'grupinfo': case 'groupinfo':
-try{
- var pic = await Turbo.getProfilePicture(m.chat)
-  } catch {
- var pic = 'https://telegra.ph/file/08691a735d7317735af6a.jpg'
-  }
-let ingfo = `*G R O U P  I N F O*\n\n*Name :* ${groupName}\n*ID Group :* ${m.chat}\n*Made :* ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n*Group Owner:* @${groupMetadata.owner.split('@')[0]}\n*Number Of Admins :* ${groupAdmins.length}\n*Number Of Participants :* ${participants.length}\n*Desc :* \n${groupMetadata.desc}`
-ds = await getBuffer(pic)
-Turbo.sendMessage(m.chat, { image: ds,caption: ingfo, mentions: [groupMetadata.owner] }, { quoted: m})
-break
-                case 'command': {
+case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
                     title: `Hi ${pushname}`,
