@@ -113,11 +113,10 @@ const jsl = require('xfarr-api')
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
 
 //Database\\
-let setik = JSON.parse(fs.readFileSync('./database/setik.json'));
-let vien = JSON.parse(fs.readFileSync('./database/vien.json'));
 let imagi = JSON.parse(fs.readFileSync('./database/imagi.json'))
+let setik = JSON.parse(fs.readFileSync('./database/setik.json'));
 let videox = JSON.parse(fs.readFileSync('./database/video.json'))
-
+let vien = JSON.parse(fs.readFileSync('./database/vien.json'));
 //read database\\
 let tebaklagu = db.data.game.tebaklagu = []
 let _family100 = db.data.game.family100 = []
