@@ -3270,73 +3270,7 @@ break
 Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
-                    break
-                    case 'alive': case 'menu': case 'list': case 'bot':{
-                           	timestampe = speed();
-latensie = speed() - timestampe
- anu = ` `
-const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                    templateMessage: {
-                        hydratedTemplate: {
-                            hydratedContentText: anu,
-                            locationMessage: {
-                            jpegThumbnail: fs.readFileSync('alena.jpg')},
-                            hydratedFooterText: `
-╭────⬡ 𝐀𝐋𝐈𝐕𝐄 𝐔𝐒𝐄𝐑 :- ${pushname} ────⬡
-│   
-│𒆜 𝙱𝙾𝚃 𝙽𝙰𝙼𝙴 :- ${global.botname}    
-│𒆜 𝙾𝚆𝙽𝙴𝚁 𝙽𝙰𝙼𝙴 :- ${global.ownername}
-│𒆜 𝙾𝚆𝙽𝙴𝚁 𝙽𝚄𝙼𝙱𝙴𝚁 :- ${global.owner}
-╰─⬡───⬡────────⬡───⬡──⬡
-                                      │
-╭─⬡───⬡ 𝐁𝐎𝐓 𝐈𝐍𝐅𝐎 ⬡───⬡──⬡
-│𒆜 𝙱𝙾𝚃 𝚁𝚄𝙽𝙽𝙸𝙽𝙶 : ${runtime(process.uptime())}
-│𒆜 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁 : ${Object.keys(global.db.data.users).length}
-│𒆜 𝙿𝙻𝙰𝚃𝙵𝙾𝚁𝙼 : ${os.platform()}
-│𒆜 𝚂𝙿𝙴𝙴𝙳 : ${latensie.toFixed(4)} miliseconds
-│𒆜 𝙷𝙾𝚂𝚃𝙽𝙰𝙼𝙴 : ${os.hostname()}
-╰─⬡───⬡────────⬡───⬡──⬡
-                                      │
-╭─⬡───⬡ 𝐆𝐑𝐎𝐔𝐏 𝐈𝐍𝐅𝐎 ⬡─⬡──⬡
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙽𝙰𝙼𝙴:- ${groupName}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙸𝙳:- ${m.chat}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙲𝚁𝙰𝚃𝙴𝙳 :- ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙾𝚆𝙽𝙴𝚁:- @${groupMetadata.owner.split('@')[0]}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙾𝚆𝙽𝙴𝚁 𝙿𝙷:- ${groupAdmins.length}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽:- ${groupMetadata.desc}
-╰─⬡───⬡ ${pushname}  ⬡─⬡──⬡`,
-                            hydratedButtons: [{
-                                urlButton: {
-                                    displayText: '𝙸𝙽𝚂𝚃𝙰 🔖',
-                                    url: `${myweb}`
-                                }
-                            }, {
-                            	urlButton: {
-                                displayText: '! 𝙶𝙸𝚃𝙷𝚄𝙱🔖',
-                                    url: `${sc}`
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: '! 𝐌𝐄𝐍𝐔',
-                                    id: `${prefix}allmenu`
-                                }
-                                }, {
-                                quickReplyButton: {
-                                    displayText: '! 𝐋𝐈𝐒𝐓',
-                                    id: `${prefix}command`
-                                }
-                                }, {
-                                quickReplyButton: {
-                                    displayText: '! 𝐎𝐖𝐍𝐄𝐑',
-                                    id: `${prefix}owner`
-                                }
-                            }]
-                        }
-                    }
-                }),{ userJid: m.chat })
-                Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
-            }
-break
+                    break                    
 case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
