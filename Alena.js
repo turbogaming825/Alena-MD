@@ -201,11 +201,11 @@ module.exports = Jsl = async (Jsl, m, chatUpdate, store) => {
 	
 	//group target \\
 const reply = (teks) => {
-            Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `𝑨𝑳𝑬𝑵𝑨-𝑴𝑫`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Jsl-MD"}}}, { quoted: m})
+            Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `𝑨𝑳𝑬𝑵𝑨-𝑴𝑫`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Alena-MD"}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` 𝙰𝙻𝙴𝙽𝙰 𝙱𝙾𝚃`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Jsl-MD"}}}, { quoted: m})
+            Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` 𝙰𝙻𝙴𝙽𝙰 𝙱𝙾𝚃`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Alena-MD"}}}, { quoted: m})
         }
 	
         //Public & Self\\
@@ -2048,7 +2048,6 @@ break
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Jsl.sendImage(m.chat, media.thumb, 𒆜 Title : ${media.title}\n🐦 File Size : ${media.filesizeF}\n🐦 Url : ${isUrl(text)}\n🐦 Ext : MP3\n🐦 Resolution : ${args[1] || '320kbps'}`, m)
                 Jsl.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -3592,7 +3591,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             }
             break
             case 'sc': case 'git': {
-                reply(`ɢɪᴛ ʟɪɴᴋ : https://github.com/Afx-Abu/Jsl-MD\n\nɪɴsᴛᴀ : ${myweb}`)
+                reply(`ɢɪᴛ ʟɪɴᴋ : https://github.com/Afx-Abu/Alenal-MD\n\nɪɴsᴛᴀ : ${myweb}`)
             }
             break
 case 'allmenu': {
