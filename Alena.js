@@ -2047,10 +2047,9 @@ break
                 if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
-                let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Jsl.sendImage(m.chat, media.thumbnail, `𒆜 ᴛɪᴛʟᴇ : ${media.title}\n𒆜 ᴍᴘ3 sɪᴢᴇ : ${media.filesizeF}\n𒆜 ʟɪɴᴋ : ${isUrl(text)}\n𒆜 ᴇxᴛ : MP3\n𒆜 ʀᴇsᴏʟᴏᴛɪᴏɴ : ${args[1] || '320kbps'}`, m)
-                Jsl.sendMessage(m.chat, { audio: { url: media.dl_link }, image: { url: anu.thumbnail },*${global.botname} mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
+                GojoMdNx.sendImage(m.chat, media.thumb, 𒆜 Title : ${media.title}\n🐦 File Size : ${media.filesizeF}\n🐦 Url : ${isUrl(text)}\n🐦 Ext : MP3\n🐦 Resolution : ${args[1] || '320kbps'}`, m)
+                GojoMdNx.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
             case 'ytmp4': case 'getvideo': case 'ytvideo': {
