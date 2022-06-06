@@ -1,21 +1,10 @@
 {
   "name": "Alena-MD",
-  "description": "whatsapp md bot build with nodejs",
+  "description": "Alena Multi Wa Bot By Abu",
   "repository": "https://github.com/Afx-Abu/Alena-MD",
-  "logo": "https://telegra.ph/file/8dcf20551b533dd0739e5.jpg",
-  "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
-  "env": {
-"IMAGE": {
-  "description": "Enter Your Img Url",
-  "required":false
-},
-"BOT_NAME": {
-  "description": "Enter Your Bot Name",
-  "required": true
-}
-
-},
-"buildpacks": [
+  "logo": "https://telegra.ph/file/dd2173a205c2f9ddfc43d.jpg",
+  "keywords": ["Abuser", "Alena", "whatsapp bot", "whatsapp automation", "multi device"],
+  "buildpacks": [
     {
       "url": "heroku/nodejs"
     },
