@@ -14,6 +14,7 @@ const axios = require('axios')
 const path = require('path')
 const os = require('os')
 const moment = require('moment-timezone')
+const time = moment().tz('Asia/Kolkata').format("HH:mm:ss")
 const { JSDOM } = require('jsdom')
 const speed = require('performance-now')
 const { performance } = require('perf_hooks')
@@ -2106,7 +2107,8 @@ break
 │ 𒆜 ᴠɪᴅᴇᴏ ʟɪɴᴋ : ${anu.url}     
 ╰───────────────┈⬡
 ╭───────────────┈⬡
-│ 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁 𝚄𝚂𝙴𝚁 :- ${pushname}
+│ 𝚄𝚂𝙴𝚁 :- ${pushname}
+│ 𝚃𝙸𝙼𝙴 :- ${moment.tz('Asia/Kolkata').format('DD/MM HH:mm:ss')}
 ╰───────────────┈⬡`,
                     footer: Jsl.user.name,
                     buttons: buttons,
@@ -2123,7 +2125,7 @@ break
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
                 Jsl.sendImage(m.chat, media.thumbnail, `𒆜 ᴛɪᴛʟᴇ : ${media.title}\n𒆜 ᴍᴘ3 sɪᴢᴇ : ${media.filesizeF}\n𒆜 ʟɪɴᴋ : ${isUrl(text)}\n𒆜 ᴇxᴛ : MP3\n𒆜 ʀᴇsᴏʟᴏᴛɪᴏɴ : ${args[1] || '320kbps'}`, m)
-                Jsl.sendMessage(m.chat,{ image: { url: anu.thumbnail }, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
+                Jsl.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
             case 'ytmp4': case 'getvideo': case 'ytvideo': {
