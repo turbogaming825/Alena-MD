@@ -201,11 +201,11 @@ module.exports = Jsl = async (Jsl, m, chatUpdate, store) => {
 	
 	//group target \\
 const reply = (teks) => {
-            Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `𝑨𝑳𝑬𝑵𝑨-𝑴𝑫`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`Jsl.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Jsl-MD"}}}, { quoted: m})
+            Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `𝑨𝑳𝑬𝑵𝑨-𝑴𝑫`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Jsl-MD"}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` 𝙰𝙻𝙴𝙽𝙰 𝙱𝙾𝚃`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`Jsl.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Jsl-MD"}}}, { quoted: m})
+            Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` 𝙰𝙻𝙴𝙽𝙰 𝙱𝙾𝚃`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Jsl-MD"}}}, { quoted: m})
         }
 	
         //Public & Self\\
@@ -1747,76 +1747,6 @@ break
                 Jsl.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
             }
             break
-            case 'bcgc': case 'bcgroup': {
-                if (!isCreator) return replay(`${mess.owner}`)
-                if (!text) return replay(`Where Is The Text?\n\nExample : ${prefix + command} Nexus Handsome`)
-                let getGroups = await Jsl.groupFetchAllParticipating()
-                let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
-                let anu = groups.map(v => v.id)
-                reply(`Sent Broadcast To ${anu.length} Group Chat, Finish Time ${anu.length * 1.5} Seconds`)
-                for (let i of anu) {
-                    await sleep(1500)
-                    let btn = [{
-                                urlButton: {
-                                    displayText: '! 𝙶𝙸𝚃𝙷𝚄𝙱🔖',
-                                    url: `${sc}`
-                                }
-                            }, {
-                                urlButton: {
-                                    displayText: '𝙸𝙽𝚂𝚃𝙰 🔖',
-                                    url: `${myweb}`
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: '🎀Menu🎀',
-                                    id: 'menu'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: '! 𝐎𝐖𝐍𝐄𝐑',
-                                    id: 'owner'
-                                }
-                            }]
-                      let txt = `「 𝙰𝙻𝙴𝙽𝙰 𝙸𝚂 𝙷𝙴𝚁 」\n\n${text}`
-                      Jsl.send5ButImg(i, txt, Jsl.user.name, fs.readFileSync('Alena.jpg')}, btn)
-                    }
-                reply(`Successful Sending Broadcast To ${anu.length} Group(s)`)
-            }
-            break
-            case 'bc': case 'broadcast': case 'bcall': {
-                if (!isCreator) return replay(`${mess.owner}`)
-                if (!text) return replay(`Where Is The Text?\n\nExample : ${prefix + command} Nexus`)
-                let anu = await store.chats.all().map(v => v.id)
-                reply(`Send Broadcast To ${anu.length} Chat\nFinish Time ${anu.length * 1.5} Seconds`)
-		for (let yoi of anu) {
-		    await sleep(1500)
-		    let btn = [{
-                                urlButton: {
-                                    displayText: '! 𝙶𝙸𝚃𝙷𝚄𝙱🔖',
-                                    url: `${sc}`
-                                }
-                            }, {
-                                urlButton: {
-                                    displayText: '𝙸𝙽𝚂𝚃𝙰 🔖',
-                                    url: `${myweb}`
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: '🎀Menu🎀',
-                                    id: 'menu'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: '! 𝐎𝐖𝐍𝐄𝐑',
-                                    id: 'owner'
-                                }
-                            }]
-                      let txt = `「 𝙰𝙻𝙴𝙽𝙰 𝚆𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃」\n\n${text}`
-                      Jsl.send5ButImg(yoi, txt, Jsl.user.name, fs.readFileSync('Alena.jpg')}, btn)
-		}
-		reply('Broadcast Success')
-            }
-            break
             case 'chatinfo': case 'infochat': {
                 if (!m.quoted) return reply(`Reply Message`)
                 let msg = await m.getQuotedObj()
@@ -3300,7 +3230,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: fs.readFileSync('Jsl.jpg')},
+                            jpegThumbnail: fs.readFileSync('alena.jpg')},
                             hydratedFooterText: `
 ╭────⬡ 𝙰𝙻𝙸𝚅 𝚄𝚂𝙴𝚁 :- ${pushname}─⬡
 │   
@@ -3514,7 +3444,7 @@ case 'list': {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: fs.readFileSync('Jsl.jpg')},
+                            jpegThumbnail: fs.readFileSync('alena.jpg')},
                             hydratedFooterText: `${pushname}`,
                             hydratedButtons: [{
                                 urlButton: {
