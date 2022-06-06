@@ -1778,7 +1778,7 @@ break
                                 }
                             }]
                       let txt = `「 𝙰𝙻𝙴𝙽𝙰 𝙸𝚂 𝙷𝙴𝚁 」\n\n${text}`
-                      Jsl.send5ButImg(i, txt, Jsl.user.name, global.thumb, btn)
+                      Jsl.send5ButImg(i, txt, Jsl.user.name, fs.readFileSync('Alena.jpg')}, btn)
                     }
                 reply(`Successful Sending Broadcast To ${anu.length} Group(s)`)
             }
@@ -1812,7 +1812,7 @@ break
                                 }
                             }]
                       let txt = `「 𝙰𝙻𝙴𝙽𝙰 𝚆𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃」\n\n${text}`
-                      Jsl.send5ButImg(yoi, txt, Jsl.user.name, global.thumb, btn)
+                      Jsl.send5ButImg(yoi, txt, Jsl.user.name, fs.readFileSync('Alena.jpg')}, btn)
 		}
 		reply('Broadcast Success')
             }
@@ -3901,7 +3901,7 @@ case 'allmenu': {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: global.thumb,
+                            jpegThumbnail: fs.readFileSync('Alena.jpg')},
                             hydratedFooterText: `${pushname}`,
                             hydratedButtons: [{
                                 urlButton: {
