@@ -108,7 +108,7 @@ const alena = require('xfarr-api')
 
 //Database\\
 let setik = JSON.parse(fs.readFileSync('./database/setik.json'));
-let vien = JSON.parse(fs.readFileSync('./database/vien.json'));
+let filter = JSON.parse(fs.readFileSync('./database/filter.json'));
 let imagi = JSON.parse(fs.readFileSync('./database/imagi.json'))
 let videox = JSON.parse(fs.readFileSync('./database/video.json'))
 
@@ -262,9 +262,9 @@ const reply = (teks) => {
 					Jsl.sendMessage(m.chat, { sticker: result }, { quoted: m })
 					}
 			}
-			for (let anju of vien){
-				if (budy === anju){
-					result = fs.readFileSync(`vn/${anju}.mp3`)
+			for (let abu of filter){
+				if (budy === abu){
+					result = fs.readFileSync(`vn/${abu}.mp3`)
 					Jsl.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 					}
 			}
