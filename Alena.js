@@ -272,7 +272,7 @@ const reply = (teks) => {
 			for (let anju of vien){
 				if (budy === anju){
 					result = fs.readFileSync(`vn/${anju}.mp3`)
-					Jsl.copyNForward(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+					Jsl.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 					}
 			}
 			for (let anjh of imagi){
