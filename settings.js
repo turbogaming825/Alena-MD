@@ -41,7 +41,7 @@ global.mess = {
 }
     global.limitawal = {
     premium: "Infinity",
-    free: 2,
+    free: 12,
     monayawal: 1000
 }
    global.rpg = {
@@ -52,14 +52,7 @@ global.mess = {
    umpanawal: 5,
    potionawal: 1
 }
-//HEROKO VARS
-global.thumb = process.env.IMAGE || 'https://telegra.ph/file/8dcf20551b533dd0739e5.jpg'
-
-function convertToBool(text, fault = 'true') {
-  return text === fault ? true : false;
-}
-
-
+global.thumb = fs.readFileSync('jsl.jpg')
 global.flaming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.fluming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=fluffy-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.flarun = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=runner-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
