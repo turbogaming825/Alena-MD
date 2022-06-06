@@ -264,25 +264,25 @@ const reply = (teks) => {
         //automatic mute
         for (let anji of setik){
 				if (budy === anji){
-					result = fs.readFileSync(`./JslMedia/sticker/${anji}.webp`)
+					result = fs.readFileSync(`./media/sticker/${anji}.webp`)
 					Jsl.sendMessage(m.chat, { sticker: result }, { quoted: m })
 					}
 			}
 			for (let anju of vien){
 				if (budy === anju){
-					result = fs.readFileSync(`./JslMedia/vn/${anju}.mp3`)
-					Jsl.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+					result = fs.readFileSync(`vn/${anju}.mp3`)
+					Jsl.copyNForward(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 					}
 			}
 			for (let anjh of imagi){
 				if (budy === anjh){
-					result = fs.readFileSync(`./JslMedia/image/${anjh}.jpg`)
+					result = fs.readFileSync(`./media/image/${anjh}.jpg`)
 					Jsl.sendMessage(m.chat, { image: result }, { quoted: m })
 					}
 			}
 					for (let anjh of videox){
 				if (budy === anjh){
-					result = fs.readFileSync(`./JslMedia/vid/${anjh}.mp4`)
+					result = fs.readFileSync(`./media/vid/${anjh}.mp4`)
 					Jsl.sendMessage(m.chat, { video: result }, { quoted: m })
 					}
 				  }
