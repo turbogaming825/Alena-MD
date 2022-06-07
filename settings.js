@@ -12,7 +12,7 @@ global.APIKeys = {
 }
 
 //HEROKU  VARS
-global.thumb = process.env.IMAGE || 'https://telegra.ph/file/8dcf20551b533dd0739e5.jpg'
+global.thumb = process.env.IMAGE || 'https://telegra.ph/file/dd2173a205c2f9ddfc43d.jpg'
 global.packname = process.env.PACKNAME ||'ᴀʟᴇɴᴀ-ᴍᴅ'
 global.author = process.env.AUTHOR ||'ᴊsʟ-ᴀʙᴜ'
 global.name = 'ALENA MULTI-DEVICE'
