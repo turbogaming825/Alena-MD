@@ -30,19 +30,19 @@
     "required": true
 },
 "OWNER_NUMBER": {
-    "description": "Enter Your Git Link",
+    "description": "Enter Your Owner Number",
     "required": false
 },
 "PACKNAME": {
   "description": "Enter Your Sticker Pack Name",
   "required":false
 },
-"IMAGE": {
-  "description": "Enter Your Img Url",
-  "required":false
-},
 "WATERMARK": {
   "description": "Watermark For Buttons",
+  "required": true
+},
+"PREMIUM_NUMBER": {
+  "description": "Enter Your Premium Number",
   "required": true
 },
 "BOT_NAME": {
