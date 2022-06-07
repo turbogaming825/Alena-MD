@@ -131,7 +131,7 @@ module.exports = Jsl = async (Jsl, m, chatUpdate, store) => {
         const isCmd = body.startsWith(prefix)
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
-        const pushname = m.pushName || "No Name"
+        const pushname = m.pushname || "No Name"
         const botNumber = await Jsl.decodeJid(Jsl.user.id)
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
@@ -294,7 +294,7 @@ const reply = (teks) => {
         })
         messages.key.fromMe = areJidsSameUser(m.sender, Jsl.user.id)
         messages.key.id = m.key.id
-        messages.pushName = m.pushName
+        messages.pushname = m.pushname
         if (m.isGroup) messages.participant = m.sender
         let msg = {
             ...chatUpdate,
@@ -882,7 +882,7 @@ if (q.includes('--help')) return reply(examkosong)
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
                 user.afkReason = text
-                reply(`${m.pushName} Has Gone Afk/Offline${text ? ': ' + text : ''}`)
+                reply(`${m.pushname} Has Gone Afk/Offline${text ? ': ' + text : ''}`)
             }
             break	
         case 'ttc': case 'ttt': case 'tictactoe': {
@@ -1764,7 +1764,7 @@ break
                  let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
                  let teks = `⬣ *𝙿𝙴𝚁𝚂𝙾𝙽𝙰𝙻 𝙲𝙷𝙰𝚃 𝙻𝙸𝚂𝚃*\n\nTᴏᴛᴀʟ ᴄʜᴀᴛ : ${anu.length} ᴄʜᴀᴛ\n\n`
                  for (let i of anu) {
-                     let nama = store.messages[i].array[0].pushName
+                     let nama = store.messages[i].array[0].pushname
                      teks += `🔖 *𝑁𝑎𝑚𝑒 :* ${nama}\n🔖 *𝑈𝑠𝑒𝑟 :* @${i.split('@')[0]}\n🔖 *𝐶ℎ𝑎𝑡 :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
                  }
                  Jsl.sendTextWithMentions(m.chat, teks, m)
@@ -3283,7 +3283,7 @@ case 'list': {
 ╰────────────────╯
 
 ╭────────────────
-│ ᴜsᴇʀ : ${pushName}
+│ ᴜsᴇʀ : ${pushname}
 │ ʙᴏᴛ ɴᴀᴍᴇ : ${global.botname}   
 │ ᴏᴡɴᴇʀ ɴᴀᴍᴇ: ${global.ownername}
 │ ʙᴏᴛ ʀᴜɴɴɪɴɢ : ${runtime(process.uptime())}
@@ -3578,7 +3578,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             }
             break
     case 'donasi': case 'donate': case 'sewabot': case 'sewa': {
-                Jsl.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/c15f725add0381fb69c4b.jpg' }, caption: `*Hi Bro ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
+                Jsl.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/c15f725add0381fb69c4b.jpg' }, caption: `*Hi Bro ${m.pushname}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
             }
             break
             case 'sc': case 'git': {
