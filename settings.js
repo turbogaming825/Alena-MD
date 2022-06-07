@@ -15,6 +15,7 @@ global.APIKeys = {
 global.packname = process.env.PACKNAME ||'ᴀʟᴇɴᴀ-ᴍᴅ'
 global.author = process.env.AUTHOR ||'ᴊsʟ-ᴀʙᴜ'
 global.name = 'ALENA MULTI-DEVICE'
+global.premium = process.env.PREMIUM_NUMBER|| '917025994178'
 global.footer = process.env.WATERMARK|| 'ᴀʟᴇɴᴀ-ᴍᴅ'
 global.owner = process.env.SUDO|| '917025994178'
 global.myweb = process.env.INSTA|| 'https://instagram.com/jsl_xr'
