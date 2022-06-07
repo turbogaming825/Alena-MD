@@ -11,19 +11,26 @@ global.APIKeys = {
 	'https://zenzapis.xyz': 'sanzychan01', //credit goes to sanzy yt, if api key expire, buy it and put it here?\\
 }
 
+//HEROKU  VARS
+global.thumb = process.env.IMAGE || 'https://telegra.ph/file/8dcf20551b533dd0739e5.jpg'
+global.packname = process.env.PACKNAME ||'ᴀʟᴇɴᴀ-ᴍᴅ'
+global.author = process.env.AUTHOR ||'ᴊsʟ-ᴀʙᴜ'
+global.name = 'ALENA MULTI-DEVICE'
+global.footer = process.env.WATERMARK|| 'ᴀʟᴇɴᴀ-ᴍᴅ'
+global.owner = process.env.SUDO|| '917025994178'
+global.myweb = process.env.INSTA|| 'https://instagram.com/jsl_xr'
+global.sc = process.env.GITHUB|| 'https://github.com/Afx-Abu'
+global.region = process.env.REGION|| 'kerala'
+global.owner = process.env.OWNER_NUMBER|| '917025994178'
+global.ownername = process.env.OWNER_NAME || 'ᴊsʟ-ᴀʙᴜ'
+global.logsmsg = convertToBool(process.env.LOGS)|| false
+
+function convertToBool(text, fault = 'true') {
+  return text === fault ? true : false;
+}
+
+
 //customize settings\\
-global.owner = ['917025994178']
-global.premium = ['917025994178']
-global.ownernomer = '917025994178'
-global.ownername = 'Jsl-Abu'
-global.botname = 'Alena-MD'
-global.footer = '© Alena ™'
-global.ig = 'https://github.com/DGXeon'
-global.region = 'Kerala'
-global.sc = 'https://github.com/Afx-Abu/Alena-MD'
-global.myweb = 'https://instagram.com/jsl_xr'
-global.packname = 'Alena'
-global.author = 'Alena By Abu'
 global.sessionName = 'session'
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
@@ -52,7 +59,6 @@ global.mess = {
    umpanawal: 5,
    potionawal: 1
 }
-global.thumb = fs.readFileSync('jsl.jpg')
 global.flaming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.fluming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=fluffy-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.flarun = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=runner-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
