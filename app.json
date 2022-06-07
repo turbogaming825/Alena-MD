@@ -5,46 +5,6 @@
   "logo": "https://telegra.ph/file/dd2173a205c2f9ddfc43d.jpg",
   "keywords": ["Abuser", "Alena", "whatsapp bot", "whatsapp automation", "multi device"],
   "env": {
-"AUTHOR": {
-    "description": "Enter Your Sticker Author Name",
-    "required": false
-},
-"INSTA": {
-    "description": "Enter Your Insta Name",
-    "required": true
-},
-"OWNER_NAME": {
-    "description": "Enter Owner Name",
-    "required": true
-},
-"GITHUB": {
-    "description": "Enter Your Git Link",
-    "required": false
-},
-"SUDO": {
-    "description": "Enter Your control Number",
-    "required": true
-},
-"REGION": {
-    "description": "Enter Your Region",
-    "required": true
-},
-"OWNER_NUMBER": {
-    "description": "Enter Your Owner Number",
-    "required": false
-},
-"PACKNAME": {
-  "description": "Enter Your Sticker Pack Name",
-  "required":false
-},
-"WATERMARK": {
-  "description": "Watermark For Buttons",
-  "required": true
-},
-"PREMIUM_NUMBER": {
-  "description": "Enter Your Premium Number",
-  "required": true
-},
 "buildpacks": [
     {
       "url": "heroku/nodejs"
