@@ -32,6 +32,7 @@
 "OWNER_NUMBER": {
     "description": "Enter Your Git Link",
     "required": false
+    "value": "917025994178"
 },
 "PACKNAME": {
   "description": "Enter Your Sticker Pack Name",
