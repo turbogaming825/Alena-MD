@@ -3219,7 +3219,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: thumb,
+                            jpegThumbnail: fs.readFileSync('jsl.jpg')},
                             hydratedFooterText: `
 ╭────⬡ 𝙰𝙻𝙸𝚅 𝚄𝚂𝙴𝚁 :- ${pushname}─⬡
 │   
@@ -3433,7 +3433,7 @@ case 'list': {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: thumb,
+                            jpegThumbnail: fs.readFileSync('jsl.jpg')},
                             hydratedFooterText: `${pushname}`,
                             hydratedButtons: [{
                                 urlButton: {
@@ -3820,7 +3820,7 @@ case 'allmenu': {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: thumb,
+                            jpegThumbnail: fs.readFileSync('jsl.jpg')},
                             hydratedFooterText: `${pushname}`,
                             hydratedButtons: [{
                                 urlButton: {
