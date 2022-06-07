@@ -105,7 +105,7 @@ const alena = require('xfarr-api')
  let _limit = JSON.parse(fs.readFileSync('./storage/user/limit.json'));
  let _buruan = JSON.parse(fs.readFileSync('./storage/user/hasil_buruan.json'));
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
-
+ let filter = JSON.parse(fs.readFileSync('./database/filter.json'));
 //Database\\
 let setik = JSON.parse(fs.readFileSync('./database/setik.json'));
 let imagi = JSON.parse(fs.readFileSync('./database/imagi.json'))
