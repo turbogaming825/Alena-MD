@@ -4,7 +4,54 @@
   "repository": "https://github.com/Afx-Abu/Alena-MD",
   "logo": "https://telegra.ph/file/dd2173a205c2f9ddfc43d.jpg",
   "keywords": ["Abuser", "Alena", "whatsapp bot", "whatsapp automation", "multi device"],
-  "buildpacks": [
+  "env": {
+"AUTHOR": {
+    "description": "Enter Your Sticker Author Name",
+    "required": false
+},
+"INSTA": {
+    "description": "Enter Your Insta Name",
+    "required": false
+},
+"OWNER_NAME": {
+    "description": "Enter Owner Name",
+    "required": false
+},
+"GITHUB": {
+    "description": "Enter Your Git Link",
+    "required": false
+},
+"SUDO": {
+    "description": "Enter Your control Number",
+    "required": false
+},
+"REGION": {
+    "description": "Enter Your Region",
+    "required": false
+},
+"OWNER_NUMBER": {
+    "description": "Enter Your Git Link",
+    "required": false
+},
+"PACKNAME": {
+  "description": "Enter Your Sticker Pack Name",
+  "required":false
+},
+"IMAGE": {
+  "description": "Enter Your Img Url",
+  "required":false
+},
+"WATERMARK": {
+  "description": "Watermark For Buttons",
+  "required": true
+},
+"BOT_NAME": {
+  "description": "Enter Your Bot Name",
+  "required": true
+}
+
+},
+"buildpacks": [
     {
       "url": "heroku/nodejs"
     },
