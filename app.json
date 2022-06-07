@@ -1,12 +1,9 @@
 {
   "name": "Alena-MD",
   "description": "Alena Multi Wa Bot By Abu",
+  "repository": "https://github.com/Afx-Abu/Alena-MD",
   "logo": "https://telegra.ph/file/dd2173a205c2f9ddfc43d.jpg",
   "keywords": ["Abuser", "Alena", "whatsapp bot", "whatsapp automation", "multi device"],
-    "repository": "https://github.com/Afx-Abu/Alena-MD",
-    "website":   "https://github.com/Afx-Abu/Alena-MD",
-    "success_url": "https://github.com/Afx-Abu/Alena-MD",
-    "stack": "container",
   "env": {
 "AUTHOR": {
     "description": "Enter Your Sticker Author Name",
@@ -35,7 +32,7 @@
 "OWNER_NUMBER": {
     "description": "Enter Your Git Link",
     "required": false
-    "value": "917025994178"
+    "value": '917025994178'
 },
 "PACKNAME": {
   "description": "Enter Your Sticker Pack Name",
