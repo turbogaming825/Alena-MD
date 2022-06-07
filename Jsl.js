@@ -262,7 +262,7 @@ const reply = (teks) => {
 			}
 			for (let anjh of filter){
 				if (budy === anjh){
-					result = fs.readFileSync(`vn/${abu}.mp3`)
+					result = fs.readFileSync(`vn/${anjh}.mp3`)
 					Jsl.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 					}
 			}
@@ -1640,9 +1640,9 @@ break
                 if (!isBotAdmins) return replay(`${mess.botAdmin}`)
                 if (!isAdmins) return replay(`${mess.admin}`)
                 if (args[0] === 'close'){
-                    await Jsl.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`Successful Closing The Group`)).catch((err) => reply(jsonformat(err)))
+                    await Jsl.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`*Successful Closing The Group*`)).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'open'){
-                    await Jsl.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`Successful Opening The Group`)).catch((err) => reply(jsonformat(err)))
+                    await Jsl.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`*Successful Opening The Group*`)).catch((err) => reply(jsonformat(err)))
                 } else {
                 let buttons = [
                         { buttonId: 'group open', buttonText: { displayText: 'ᴏᴘᴇɴ' }, type: 1 },
@@ -2032,15 +2032,23 @@ break
                 Jsl.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-	    case 'ytmp3': case 'getmusic': case 'ytaudio': {
-                let { yta } = require('./lib/y2mate')
-                if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
-                let quality = args[1] ? args[1] : '320kbps'
-                let media = await yta(text, quality)
-                if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Jsl.sendImage(m.chat, media.thumb, `𒆜 Title : ${media.title}\n𒆜 File Size : ${media.filesizeF}\n𒆜 Url : ${isUrl(text)}\n𒆜 Ext : MP3\n𒆜 Resolution : ${args[1] || '320kbps'}`, m)
-                Jsl.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
-            }
+case 'ytmp3':{
+let audi = await youtubedl(args[0])
+let { thumbnail, audio, title } = audi
+let det = audi.audio['320kbps']
+let { quality, fileSizeH, fileSize } = det
+let url = await det.download()   
+Jsl.sendFile(m.chat, url, 0, {mimetype: 'audio/mpeg' ,fileName: `${title.trim()}.mp3`,
+  contextInfo: ${m.sender.split("@")[0]},
+    externalAdReply :{
+    mediaUrl: `${args[0]}`,
+    mediaType: 2,
+    description: deslink, 
+    title: title,
+    body: `${global.botnma}`, // `${fileSizeH}`,
+    thumbnail: await(await fetch(thumbnail)).buffer(), 
+    }}
+            })
             break
             case 'ytmp4': case 'getvideo': case 'ytvideo': {
                 let { ytv } = require('./lib/y2mate')
@@ -3210,7 +3218,7 @@ Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
-                     case 'alive': case 'menu': case 'list': case 'bot':{
+                     case 'alive': case 'bot':{
                            	timestampe = speed();
 latensie = speed() - timestampe
  anu = ` `
@@ -3265,6 +3273,182 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                                     id: `${prefix}command`
                                 }
                                 }, {
+                                quickReplyButton: {
+                                    displayText: '! 𝐎𝐖𝐍𝐄𝐑',
+                                    id: `${prefix}owner`
+                                }
+                            }]
+                        }
+                    }
+                }),{ userJid: m.chat })
+                Jsl.relayMessage(m.chat, template.message, { messageId: template.key.id })
+            }
+break
+case 'list': {
+  	anu = `
+╭────────────────╮
+	*${global.botname}*   
+╰────────────────╯
+
+╭────────────────
+│ ᴜsᴇʀ : ${pushName}
+│ ʙᴏᴛ ɴᴀᴍᴇ : ${global.botname}   
+│ ᴏᴡɴᴇʀ ɴᴀᴍᴇ: ${global.ownername}
+│ ʙᴏᴛ ʀᴜɴɴɪɴɢ : ${runtime(process.uptime())}
+│ ᴠᴇʀsɪᴏɴ : 3.0.0
+│ ᴄʀᴇᴀᴛᴇʀ : ${global.ownername}
+╰────────────────
+╭────────────────
+│ 1   𝙰𝙵𝙺 
+│ 2   𝙰𝙻𝙸𝚅𝙴 
+│ 3   𝙰𝙽𝚃𝙸𝙵𝙰𝙺𝙴 
+│ 4   𝚂𝙴𝚃𝙲𝙼𝙳 
+│ 5   𝙶𝙴𝚃𝙲𝙼𝙳 
+│ 6   𝙳𝙴𝙻𝙲𝙼𝙳 
+│ 7   𝙵𝙱 
+│ 8   𝙵𝙰𝙽𝙲𝚈 
+│ 9   𝙵𝙾𝚁𝚆𝙰𝚁𝙳 
+│ 10  𝚂𝙰𝚅𝙴 
+│ 11  𝚆𝙴𝙻𝙲𝙾𝙼𝙴 
+│ 12  𝙶𝙾𝙾𝙳𝙱𝚈𝙴 
+│ 13  𝙺𝙸𝙲𝙺 
+│ 14  𝙰𝙳𝙳 
+│ 15  𝙿𝚁𝙾𝙼𝙾𝚃𝙴 
+│ 16  𝙳𝙴𝙼𝙾𝚃𝙴 
+│ 17  𝙸𝙽𝚅𝙸𝚃𝙴 
+│ 18  𝙼𝚄𝚃𝙴 
+│ 19  𝚄𝙽𝙼𝚄𝚃𝙴 
+│ 20  𝙹𝙾𝙸𝙽 
+│ 21  𝚁𝙴𝚅𝙾𝙺𝙴
+│ 22  𝙶𝙸𝙽𝙵𝙾 
+│ 23  𝚁𝙴𝚂𝚃𝙰𝚁𝚃
+│ 24  𝚂𝙷𝚄𝚃𝙳𝙾𝚆𝙽
+│ 25  𝙳𝚈𝙽𝙾
+│ 26  𝚂𝙴𝚃𝚅𝙰𝚁 
+│ 27  𝙳𝙴𝙻𝚅𝙰𝚁 
+│ 28  𝙶𝙴𝚃𝚅𝙰𝚁 
+│ 29  𝙰𝙻𝙻𝚅𝙰𝚁
+│ 30  𝚄𝙿𝙳𝙰𝚃𝙴
+│ 31  𝚄𝙿𝙳𝙰𝚃𝙴 𝙽𝙾𝚆
+│ 32  𝙸𝙼𝙶 
+│ 33  𝙸𝙽𝚂𝚃𝙰 
+│ 34  𝚁𝙾𝚃𝙰𝚃𝙴 
+│ 35  𝙼𝙿𝟹
+│ 36  𝙿𝙷𝙾𝚃𝙾
+│ 37  𝚁𝙴𝚅𝙴𝚁𝚂𝙴
+│ 38  𝙲𝚄𝚃 
+│ 39  𝚃𝚁𝙸𝙼 
+│ 40  𝙼𝙴𝚁𝙶𝙴 
+│ 41  𝙲𝙾𝙼𝙿𝚁𝙴𝚂𝚂 
+│ 42  𝙱𝙰𝚂𝚂 
+│ 43  𝚃𝚁𝙴𝙱𝙻𝙴 
+│ 44  𝙷𝙸𝚂𝚃𝙾
+│ 45  𝚅𝙴𝙲𝚃𝙾𝚁
+│ 46  𝙲𝚁𝙾𝙿 
+│ 47  𝙻𝙾𝚆
+│ 48  𝙿𝙸𝚃𝙲𝙷
+│ 49  𝙰𝚅𝙴𝙲
+│ 50  𝙰𝚅𝙼
+│ 51  𝙱𝙻𝙰𝙲𝙺
+│ 52  𝙼𝙴𝙳𝙸𝙰𝙵𝙸𝚁𝙴 
+│ 53  𝙼𝙴𝙽𝚃𝙸𝙾𝙽 
+│ 54  𝙽𝙴𝚆𝚂 
+│ 55  𝙿𝙳𝙼 
+│ 56  𝙿𝙸𝙽𝙶 
+│ 57  𝙿𝙸𝙽𝚃𝙴𝚁𝙴𝚂𝚃 
+│ 58  𝙿𝙻𝚄𝙶𝙸𝙽 
+│ 59  𝚁𝙴𝙼𝙾𝚅𝙴 
+│ 60  𝙹𝙸𝙳
+│ 61  𝙻𝙴𝙵𝚃
+│ 62  𝙱𝙻𝙾𝙲𝙺
+│ 63  𝚄𝙽𝙱𝙻𝙾𝙲𝙺
+│ 64  𝙿𝙿
+│ 65  𝚆𝙷𝙾𝙸𝚂
+│ 66  𝚁𝙴𝙰𝙲𝚃 
+│ 67  𝚁𝙼𝙱𝙶
+│ 68  𝚂𝚂 
+│ 69  𝙵𝚄𝙻𝙻𝚂𝚂 
+│ 70  𝚂𝚃𝙸𝙲𝙺𝙴𝚁
+│ 71  𝚃𝙰𝙺𝙴 
+│ 72  𝙼𝙿𝟺
+│ 73  𝚂𝚃𝙾𝚁𝚈 
+│ 74  𝚃𝙰𝙶 
+│ 75  𝚃𝙸𝙺𝚃𝙾𝙺 
+│ 76  𝚃𝚃𝚂 
+│ 77  𝚃𝚆𝙸𝚃𝚃𝙴𝚁 
+│ 78  𝚄𝙿𝙻𝙾𝙰𝙳 
+│ 79  𝚄𝚁𝙻 
+│ 80  𝚈𝚃𝚅 
+│ 81  𝚈𝚃𝙰 
+│ 82  𝚈𝚃𝚂 
+│ 83  𝚂𝙾𝙽𝙶 
+│ 84  𝚅𝙸𝙳𝙴𝙾 
+│ 85  𝙼𝙵𝙾𝚁𝚆𝙰𝚁𝙳 
+│ 86  𝙿𝙻𝙰𝚈 
+│ 87  𝙲𝙰𝙿𝚃𝙸𝙾𝙽 
+│ 88  𝙱𝚈 
+│ 89  𝙴𝙼𝙸𝚇 
+│ 90  𝚂𝙳𝚈𝙽𝙾 
+│ 91  𝙱𝙸𝚃𝙻𝚈 
+│ 92  𝚅𝚅 
+│ 93  𝙶𝙴𝚃𝚀𝚁 
+│ 94  𝙰𝙽𝙸𝙼𝚈 
+│ 95  𝙶𝚀𝚁 
+│ 96  𝙱𝙸𝚃𝙻𝚈 
+│ 97  𝚂𝙴𝚃𝚂𝚄𝙳𝙾 
+│ 98  𝙳𝙴𝙻𝚂𝚄𝙳𝙾 
+│ 99  𝙶𝙴𝚃𝚂𝚄𝙳𝙾 
+│ 100 𝙳𝙾𝙲 
+│ 101 𝙻𝚈𝚁𝙸𝙲𝚂 
+│ 102 𝚃𝙴𝚇𝚃 
+│ 103 𝙸𝙶 
+│ 104 𝙹𝙴𝙰𝙽 
+│ 105 𝙲𝙰𝙻𝙲 
+│ 106 𝚃𝙸𝙼𝙴 
+│ 107 𝚂𝙴𝙳 
+│ 108 𝚂𝚃𝙴𝙴𝙻 
+│ 109 𝙼𝙴𝚃𝙰𝙻𝙻𝙸𝙲 
+│ 110 𝙶𝙻𝙸𝚃𝙲𝙷 
+│ 111 𝙱𝚄𝚁𝙽 
+│ 112 𝟾𝙱𝙸𝚃 
+│ 113 𝙰𝚃𝚂 
+│ 114 𝚆𝙼 
+│ 115 𝙵𝚉 
+│ 116 𝙳𝙻𝚃 
+│ 117 𝙶𝙿𝙹𝙸𝙳𝚂 
+│ 118 𝙼𝙴𝙴 
+│ 119 𝚈𝚃𝙻 
+│ 120 𝙷𝙴𝙲𝙺 
+│ 121 𝙱𝙻𝙾𝚆𝙽 
+│ 122 𝙳𝙴𝙴𝙿 
+│ 123 𝙴𝙰𝚁𝚁𝙰𝙿𝙴 
+│ 124 𝙵𝙰𝚂𝚃 
+│ 125 𝙵𝙰𝚃 
+│ 126 𝙽𝙸𝙶𝙷𝚃𝙲𝙾𝚁𝙴 
+│ 127 𝚁𝙾𝙱𝙾𝚃 
+│ 128 𝚂𝙻𝙾𝚆 
+│ 129 𝚂𝙼𝙾𝙾𝚃𝙷 
+│ 130 𝚃𝚄𝙿𝙰𝙸 
+│ 131 𝚅𝙼𝙴𝙽𝚄 
+│ 132 𝙰𝙼𝚁𝚄 
+│ 133 𝚃𝚁𝚄𝙴 
+│ 134 𝙵𝙸𝙽𝙳
+│ 135 𝙶𝙴𝚃𝙵𝙾𝙾𝙳 
+│ 136 𝙶𝚃𝙷𝚄𝙱 
+╰───${ownername}────`
+    const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            hydratedContentText: anu,
+                            locationMessage: {
+                            jpegThumbnail: fs.readFileSync('jsl.jpg')},
+                            hydratedFooterText: `${pushname}`,
+                            hydratedButtons: [{
+                                urlButton: {
+                                    displayText: '𝙸𝙽𝚂𝚃𝙰 🔖',
+                                    url: `${myweb}`
+                                }
+                            }, {
                                 quickReplyButton: {
                                     displayText: '! 𝐎𝐖𝐍𝐄𝐑',
                                     id: `${prefix}owner`
