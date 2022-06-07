@@ -11,11 +11,11 @@
 },
 "INSTA": {
     "description": "Enter Your Insta Name",
-    "required": false
+    "required": true
 },
 "OWNER_NAME": {
     "description": "Enter Owner Name",
-    "required": false
+    "required": true
 },
 "GITHUB": {
     "description": "Enter Your Git Link",
@@ -23,16 +23,15 @@
 },
 "SUDO": {
     "description": "Enter Your control Number",
-    "required": false
+    "required": true
 },
 "REGION": {
     "description": "Enter Your Region",
-    "required": false
+    "required": true
 },
 "OWNER_NUMBER": {
     "description": "Enter Your Git Link",
     "required": false
-    "value": '917025994178'
 },
 "PACKNAME": {
   "description": "Enter Your Sticker Pack Name",
