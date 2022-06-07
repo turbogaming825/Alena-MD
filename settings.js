@@ -12,7 +12,6 @@ global.APIKeys = {
 }
 
 //HEROKU  VARS
-global.thumb = process.env.IMAGE || 'https://telegra.ph/file/dd2173a205c2f9ddfc43d.jpg'
 global.packname = process.env.PACKNAME ||'ᴀʟᴇɴᴀ-ᴍᴅ'
 global.author = process.env.AUTHOR ||'ᴊsʟ-ᴀʙᴜ'
 global.name = 'ALENA MULTI-DEVICE'
@@ -59,6 +58,7 @@ global.mess = {
    umpanawal: 5,
    potionawal: 1
 }
+global.thumb = fs.readFileSync('jsl.jpg')
 global.flaming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.fluming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=fluffy-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.flarun = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=runner-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
