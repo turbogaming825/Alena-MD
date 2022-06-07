@@ -3205,7 +3205,7 @@ reply("Success Changing Menu To "+q)
 break
                     case 'bug': case 'report': {
                     	if(!text) return reply(`Enter The Bug\n\nExample: ${command} Menu Error`)
-                    	Jsl.sendMessage(`918129624395@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
+                    	Jsl.sendMessage(`917025994178@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
@@ -3219,7 +3219,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: global.thumb
+                            jpegThumbnail: thumb,
                             hydratedFooterText: `
 ╭────⬡ 𝙰𝙻𝙸𝚅 𝚄𝚂𝙴𝚁 :- ${pushname}─⬡
 │   
@@ -3433,7 +3433,7 @@ case 'list': {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: global.thumb
+                            jpegThumbnail: thumb,
                             hydratedFooterText: `${pushname}`,
                             hydratedButtons: [{
                                 urlButton: {
@@ -3820,7 +3820,7 @@ case 'allmenu': {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: global.thumb
+                            jpegThumbnail: thumb,
                             hydratedFooterText: `${pushname}`,
                             hydratedButtons: [{
                                 urlButton: {
