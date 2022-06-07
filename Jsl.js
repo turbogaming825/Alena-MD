@@ -2032,23 +2032,15 @@ break
                 Jsl.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-case 'ytmp3':{
-let audi = await youtubedl(args[0])
-let { thumbnail, audio, title } = audi
-let det = audi.audio['320kbps']
-let { quality, fileSizeH, fileSize } = det
-let url = await det.download()   
-Jsl.sendFile(m.chat, url, 0, {mimetype: 'audio/mpeg' ,fileName: `${title.trim()}.mp3`,
-  contextInfo: ${m.sender.split("@")[0]},
-    externalAdReply :{
-    mediaUrl: `${args[0]}`,
-    mediaType: 2,
-    description: deslink, 
-    title: title,
-    body: `${global.botnma}`, // `${fileSizeH}`,
-    thumbnail: await(await fetch(thumbnail)).buffer(), 
-    }}
-            })
+case 'ytmp3': case 'getmusic': case 'ytaudio': {
+                let { yta } = require('./lib/y2mate')
+                if (!text) return reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
+                let quality = args[1] ? args[1] : '320kbps'
+                let media = await yta(text, quality)
+                if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
+                Jsl.sendImage(m.chat, media.thumb, `𒆜 𝚃𝙸𝚃𝙻𝙴 : ${media.title}\n𒆜 𝚂𝙸𝚉𝙴 : ${media.filesizeF}\n𒆜 𝙻𝙸𝙽𝙺 : ${isUrl(text)}\n𒆜 𝙴𝚇𝚃 : MP3\n𒆜 𝚁𝙴𝚂𝙾𝙻𝙾𝚃𝙸𝙾𝙽 : ${args[1] || '320kbps'}`, m)
+                Jsl.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
+            }
             break
             case 'ytmp4': case 'getvideo': case 'ytvideo': {
                 let { ytv } = require('./lib/y2mate')
