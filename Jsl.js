@@ -105,10 +105,9 @@ const alena = require('xfarr-api')
  let _limit = JSON.parse(fs.readFileSync('./storage/user/limit.json'));
  let _buruan = JSON.parse(fs.readFileSync('./storage/user/hasil_buruan.json'));
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
- let filter = JSON.parse(fs.readFileSync('./database/filter.json'));
 //Database\\
 let setik = JSON.parse(fs.readFileSync('./database/setik.json'));
-let imagi = JSON.parse(fs.readFileSync('./database/imagi.json'))
+let filter = JSON.parse(fs.readFileSync('./database/imagi.json'))
 let videox = JSON.parse(fs.readFileSync('./database/video.json'))
 
 //read database\\
@@ -261,16 +260,10 @@ const reply = (teks) => {
 					Jsl.sendMessage(m.chat, { sticker: result }, { quoted: m })
 					}
 			}
-			for (let abu of filter){
-				if (budy === abu){
+			for (let anjh of filter){
+				if (budy === anjh){
 					result = fs.readFileSync(`vn/${abu}.mp3`)
 					Jsl.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
-					}
-			}
-			for (let anjh of imagi){
-				if (budy === anjh){
-					result = fs.readFileSync(`./media/image/${anjh}.jpg`)
-					Jsl.sendMessage(m.chat, { image: result }, { quoted: m })
 					}
 			}
 					for (let anjh of videox){
