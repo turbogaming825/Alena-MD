@@ -45,12 +45,6 @@
   "description": "Enter Your Premium Number",
   "required": true
 },
-"BOT_NAME": {
-  "description": "Enter Your Bot Name",
-  "required": true
-}
-
-},
 "buildpacks": [
     {
       "url": "heroku/nodejs"
