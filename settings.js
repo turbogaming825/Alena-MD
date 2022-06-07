@@ -12,24 +12,6 @@ global.APIKeys = {
 }
 
 //HEROKU  VARS
-global.packname = process.env.PACKNAME ||'ᴀʟᴇɴᴀ-ᴍᴅ'
-global.author = process.env.AUTHOR ||'ᴊsʟ-ᴀʙᴜ'
-global.name = 'ALENA MULTI-DEVICE'
-global.footer = process.env.WATERMARK|| 'ᴀʟᴇɴᴀ-ᴍᴅ'
-global.owner = process.env.SUDO|| '917025994178'
-global.myweb = process.env.INSTA|| 'https://instagram.com/jsl_xr'
-global.sc = process.env.GITHUB|| 'https://github.com/Afx-Abu'
-global.region = process.env.REGION|| 'kerala'
-global.owner = process.env.OWNER_NUMBER|| '917025994178'
-global.ownername = process.env.OWNER_NAME || 'ᴊsʟ-ᴀʙᴜ'
-global.logsmsg = convertToBool(process.env.LOGS)|| false
-
-function convertToBool(text, fault = 'true') {
-  return text === fault ? true : false;
-}
-
-
-
 global.owner = ['917025994178']
 global.premium = ['917025994178']
 global.ownernomer = '917025994178'
