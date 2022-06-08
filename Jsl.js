@@ -260,7 +260,7 @@ const reply = (teks) => {
 					Jsl.sendMessage(m.chat, { sticker: result }, { quoted: m })
 					}
 			}
-			for (let anjh of filter){
+			for (let anjh of fillter){
 				if (budy === anjh){
 					result = fs.readFileSync(`vn/${anjh}.mp3`)
 					Jsl.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
