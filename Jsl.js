@@ -107,7 +107,7 @@ const alena = require('xfarr-api')
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
 //Database\\
 let setik = JSON.parse(fs.readFileSync('./database/setik.json'));
-let filter = JSON.parse(fs.readFileSync('./database/filter.json'))
+let filter = JSON.parse(fs.readFileSync('./database/image.json'))
 let videox = JSON.parse(fs.readFileSync('./database/video.json'))
 
 //read database\\
