@@ -107,7 +107,7 @@ const alena = require('xfarr-api')
  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
 //Database\\
 let setik = JSON.parse(fs.readFileSync('./database/setik.json'));
-let filter = JSON.parse(fs.readFileSync('./database/imagi.json'))
+let filter = JSON.parse(fs.readFileSync('./database/filter.json'))
 let videox = JSON.parse(fs.readFileSync('./database/video.json'))
 
 //read database\\
@@ -131,7 +131,7 @@ module.exports = Jsl = async (Jsl, m, chatUpdate, store) => {
         const isCmd = body.startsWith(prefix)
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
-        const pushname = m.pushname || "No Name"
+        const pushname = m.pushName || "No Name"
         const botNumber = await Jsl.decodeJid(Jsl.user.id)
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
@@ -198,11 +198,11 @@ module.exports = Jsl = async (Jsl, m, chatUpdate, store) => {
 	
 	//group target \\
 const reply = (teks) => {
-            Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `ɢɪᴛʜᴜʙ`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`jsl.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Alena-MD"}}}, { quoted: m})
+            Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `ɢɪᴛʜᴜʙ`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`Jsl.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Alena-MD"}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `ɢɪᴛʜᴜʙ`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`jsl.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Alena-MD"}}}, { quoted: m})
+            Jsl.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": `ɢɪᴛʜᴜʙ`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`Jsl.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Alena-MD"}}}, { quoted: m})
         }
 	
         //Public & Self\\
@@ -1201,14 +1201,14 @@ Jsl.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m })
 
 					break
   case 'handsomecheck':
-				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Jsl`)
 					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
 Jsl.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
 
 					break
 case 'beautifulcheck':
-				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Jsl`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
 Jsl.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
@@ -1224,15 +1224,15 @@ case 'awesomecheck':
                  case 'prettycheck':
                     case 'lovelycheck':
                       case 'uglycheck':
-				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Jsl`)
 					const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 Jsl.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
 					break
 					case 'charactercheck':
-					if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
-					const xeony =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
-					const taky = xeony[Math.floor(Math.random() * xeony.length)]
+					if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Jsl`)
+					const Jsly =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
+					const taky = Jsly[Math.floor(Math.random() * Jsly.length)]
 					Jsl.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
 				     break
                     case 'stupid':
@@ -2023,7 +2023,7 @@ break
 ╰───────────────┈⬡
 ╭───────────────┈⬡
 │ 𝚄𝚂𝙴𝚁 :- ${pushname}
-│ 𝚃𝙸𝙼𝙴 :- ${moment.tz('Asia/Kolkata').format('DD/MM HH:mm:ss')}
+│ 𝚃𝙸𝙼𝙴 :- ${moment.tz('Asia/Kolkata').f}
 ╰───────────────┈⬡`,
                     footer: Jsl.user.name,
                     buttons: buttons,
@@ -2284,7 +2284,7 @@ case 'webtonsearch': case 'webtoon':
             }
             break
             case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
-                if (!text) return reply(`Enter Text, Example : ${prefix + command} Xeon`)
+                if (!text) return reply(`Enter Text, Example : ${prefix + command} Jsl`)
                 reply(mess.wait)
                 Jsl.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: m})
 	    }
@@ -2588,7 +2588,7 @@ case 'webtonsearch': case 'webtoon':
                     reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'ig') {
-                    if (!id) return reply(`No Query username, Example : ${prefix + command} ig josephxeon13`)
+                    if (!id) return reply(`No Query username, Example : ${prefix + command} ig josephJsl13`)
                     let { result: anu } = await fetchJson(api('zenz', '/api/stalker/ig', { username: id }, 'apikey'))
                     if (anu.status == false) return reply(anu.result.message)
                     Jsl.sendMedia(m.chat, anu.caption.profile_hd, '', `𒆜 Full Name : ${anu.caption.full_name}\n𒆜 User Name : ${anu.caption.user_name}\n𒆜 ID ${anu.caption.user_id}\n𒆜 Following : ${anu.caption.followers}\n𒆜 Followers : ${anu.caption.following}\n𒆜 Bussines : ${anu.caption.bussines}\n𒆜 Professional : ${anu.caption.profesional}\n𒆜 Verified : ${anu.caption.verified}\n𒆜 Private : ${anu.caption.private}\n𒆜 Bio : ${anu.caption.biography}\n𒆜 Bio Url : ${anu.caption.bio_url}`, m)
@@ -3219,9 +3219,9 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: fs.readFileSync('jsl.jpg')},
+                            jpegThumbnail: fs.readFileSync('Jsl.jpg')},
                             hydratedFooterText: `
-╭────⬡ 𝙰𝙻𝙸𝚅 𝚄𝚂𝙴𝚁 :- ${pushname}─⬡
+╭────⬡ 𝙰𝙻𝙸𝚅 𝚄𝚂𝙴𝚁 :-@${pushname}─⬡
 │   
 │𒆜 𝙱𝙾𝚃 𝙽𝙰𝙼𝙴 :- ${global.botname}    
 │𒆜 𝙾𝚆𝙽𝙴𝚁 𝙽𝙰𝙼𝙴 :- ${global.ownername}
@@ -3242,7 +3242,6 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 │𒆜 𝙶𝚁𝙾𝚄𝙿 𝙲𝚁𝙰𝚃𝙴𝙳 :- ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}
 │𒆜 𝙶𝚁𝙾𝚄𝙿 𝙾𝚆𝙽𝙴𝚁 :- @${groupMetadata.owner.split('@')[0]}
 │𒆜 𝙶𝚁𝙾𝚄𝙿 𝙰𝙳𝙼𝙸𝙽𝚂 :- ${groupAdmins.length}
-│𒆜 𝙶𝚁𝙾𝚄𝙿 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽 :- ${groupMetadata.desc}
 ╰─⬡───⬡ ɪᴀᴍ ᴀʟɪᴠᴇ ⬡─⬡──⬡`,
                             hydratedButtons: [{
                                 urlButton: {
@@ -3283,7 +3282,7 @@ case 'list': {
 ╰────────────────╯
 
 ╭────────────────
-│ ᴜsᴇʀ : ${pushname}
+│ ᴜsᴇʀ : @${pushname}
 │ ʙᴏᴛ ɴᴀᴍᴇ : ${global.botname}   
 │ ᴏᴡɴᴇʀ ɴᴀᴍᴇ: ${global.ownername}
 │ ʙᴏᴛ ʀᴜɴɴɪɴɢ : ${runtime(process.uptime())}
@@ -3433,7 +3432,7 @@ case 'list': {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: fs.readFileSync('jsl.jpg')},
+                            jpegThumbnail: fs.readFileSync('Jsl.jpg')},
                             hydratedFooterText: `${pushname}`,
                             hydratedButtons: [{
                                 urlButton: {
@@ -3820,7 +3819,7 @@ case 'allmenu': {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: fs.readFileSync('jsl.jpg')},
+                            jpegThumbnail: fs.readFileSync('Jsl.jpg')},
                             hydratedFooterText: `${pushname}`,
                             hydratedButtons: [{
                                 urlButton: {
@@ -4108,6 +4107,45 @@ await Jsl.send5ButImg(from, `` + '' + ' ', `
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰 🔖","url": `${myweb}`}},{"urlButton": {"displayText": "! 𝙶𝙸𝚃𝙷𝚄𝙱🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "𝙿𝙰𝚈 🔖","id": 'donate'}},{"quickReplyButton": {"displayText": "! 𝐎𝐖𝐍𝐄𝐑","id": 'owner'}}] )
 break
+case 'fancy':
+				if (args.length < 1) return reply('what is text?')
+anu = await fetchJson(`https://bx-hunter.herokuapp.com/api/fancytext?text=${body.slice(11)}&apikey=${HunterApi}`, {method: 'get'})
+teks = anu.result
+reply(teks)
+break
+case 'getpp':
+					anu = from
+		if (`${anu}@s.whatsapp.net`) {
+		try {
+					ppimg = await Jsl.getProfilePicture(anu)
+				} catch {
+					ppimg = 'https://i.imgur.com/ZVZbhRg.jpeg'
+				}
+				ano = await Jsl.getProfilePicture(anu)
+				buffer = await getBuffer(ano)
+				Jsl.sendMessage(from, buffer, image, {quoted: mek})
+		} else {
+		}
+			  break
+case 'mode':
+buttonss = [{buttonId: `public`, buttonText: {displayText: '𝑷𝑼𝑩𝑳𝑰𝑪'}, type: 1},{buttonId: `self`, buttonText: {displayText: '𝑷𝑹𝑰𝑽𝑨𝑻𝑬'}, type: 1}]
+const buMess = {
+    contentText: "SELF/PUBLIC",
+    footerText: '𝙲𝙷𝙾𝙾𝚂𝙴 𝙰𝙽𝚈 𝙾𝙽𝙴!',
+    buttons: buttonss,
+    headerType: 1
+}
+await Jsl.sendMessage(from, buMess, MessageType.buttonsMessage, {quoted: ftok})
+break
+case 'insta':
+if (!c) return reply('Give link?')
+var { igDownloader } = require('./lib/igdown')
+   res = await igDownloader(`${c}`).catch(e => {
+reply(mess.error.api)
+})
+console.log(res)
+sendMediaURL(from,`${res.result.link}`,`${res.result.desc}`)
+                    break
 case 'convertmenu':
 var unicorn = await getBuffer(picak+'Converter Menu')
 await Jsl.send5ButImg(from, `` + '' + ' ', `
