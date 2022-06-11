@@ -14,17 +14,17 @@ global.APIKeys = {
 }
 
 //HEROKU  VARS
-global.owner = ['917025994178']
-global.premium = ['917025994178']
-global.ownernomer = '917025994178'
-global.ownername = 'Jsl-Abu'
+global.owner = ['917373104400']
+global.premium = ['917373104400']
+global.ownernomer = '917373104400'
+global.ownername = 'Toxic-Darco'
 global.botname = 'Alena-MD'
 global.footer = '© Alena ™'
 global.region = 'Kerala'
 global.sc = 'https://github.com/Afx-Abu/Alena-MD'
-global.myweb = 'https://instagram.com/jsl_xr'
+global.myweb = 'https://instagram.com/toxic_darco_official'
 global.packname = 'Alena'
-global.author = 'Alena By Abu'
+global.author = 'Alena MD'
 global.sessionName = 'session'
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
